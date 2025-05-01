@@ -5,17 +5,14 @@ const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [errors, setErrors] = useState({ email: "", password: "" });
 
-
     const validateEmail = (email) => {
         const emailtest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailtest.test(email);
     };
 
-
     const validatePassword = (password) => {
         return password.length >= 6;
     };
-
     const inputHandle = (e) => {
         const { id, value } = e.target;
         setFormData((prev) => ({ ...prev, [id]: value }));
